@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -82,6 +82,14 @@ import { Head } from '@inertiajs/vue3';
                         </li>
                     </ul>
                     <ul class="flex gap-3 text-sm leading-normal">
+                        <li>
+                            <Link
+                                href="/users"
+                                class="inline-block rounded-sm border border-green-600 bg-green-600 px-5 py-1.5 text-sm leading-normal text-white hover:border-green-700 hover:bg-green-700 dark:border-green-500 dark:bg-green-500 dark:text-white dark:hover:border-green-600 dark:hover:bg-green-600"
+                            >
+                                Users (with Horizon)
+                            </Link>
+                        </li>
                         <li>
                             <a
                                 href="https://cloud.laravel.com"

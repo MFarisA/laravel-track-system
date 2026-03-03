@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicles', function (Blueprint $table) { // Fixed typo: vechiles -> vehicles
+        Schema::create('vehicles', function (Blueprint $table) { 
             $table->id();
             $table->string('plate_number')->unique();
             $table->string('device_id')->unique();

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('gps_points', function (Blueprint $table) {
             $table->id();
-            $table->decimal('latitude', 10, 7);  // Fixed: 10.7 -> 10, 7
-            $table->decimal('longitude', 10, 7); // Fixed: 10. -> 10, 7
+            $table->decimal('latitude', 10, 7); 
+            $table->decimal('longitude', 10, 7);
             $table->decimal('speed_kmh', 8, 2)->default(0);
             $table->decimal('heading', 5, 2)->default(0);
             $table->timestamp('recorded_at');

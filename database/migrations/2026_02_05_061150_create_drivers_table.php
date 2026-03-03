@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('employee_id')->unique();
             $table->string('name');
-            $table->string('phone')->unique(); // Changed from integer to string
+            $table->string('phone')->unique(); 
             $table->string('license_number');
             $table->date('license_expiry')->nullable();
             $table->string('status')->default('available');

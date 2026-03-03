@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('end_time')->nullable();
             $table->string('start_address')->nullable();
             $table->string('end_address')->nullable();
-            $table->decimal('distance_km', 10, 2)->default(0); // Fixed: 10.2 -> 10, 2
+            $table->decimal('distance_km', 10, 2)->default(0); 
             $table->string('status')->default('pending');
             $table->foreignId('driver_id')->constrained('drivers')->cascadeOnDelete();
             $table->foreignId('vehicle_id')->constrained('vehicles')->cascadeOnDelete();

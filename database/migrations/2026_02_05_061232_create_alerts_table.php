@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->string('severity')->default('medium');
-            $table->decimal('latitude', 10, 7)->nullable();  // Fixed syntax
-            $table->decimal('longitude', 10, 7)->nullable(); // Fixed syntax
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->json('metadata')->nullable();
             $table->boolean('acknowledged')->default(false);
             $table->foreignId('vehicle_id')->nullable()->constrained('vehicles')->nullOnDelete();
