@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('drivers', function (Blueprint $table) {
+        Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('employee_id')->unique();
-            $table->string('license_number');
-            $table->date('license_expiry')->nullable();
-            $table->string('status')->default('available');
+            $table->string('type');
+            $table->string('title');
+            $table->text('body')->nullable();
+            $table->jsonb('data')->nullable();
+            $table->timestamp('read_at')->nullable();
+            $table->foreignId('driver_id')->constrained('drivers')->nullOnDelete();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('drivers');
+        Schema::dropIfExists('notifications');
     }
 };
