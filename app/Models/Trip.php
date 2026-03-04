@@ -24,6 +24,16 @@ class Trip extends Model
         'distance_km' => 'decimal:2',
     ];
 
+    public function deliveryProof()
+    {
+        return $this->hasOne(DeliveryProof::class);
+    }
+
+    public function invoice()
+    {
+        return $this->hasOne(Invoice::class);
+    }
+
     public function driver()
     {
         return $this->belongsTo(Driver::class);

@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Driver extends Model
 {
     protected $fillable = [
+        'user_id',
         'employee_id',
-        'name',
-        'phone',
         'license_number',
         'license_expiry',
         'status',
@@ -18,6 +17,16 @@ class Driver extends Model
     protected $casts = [
         'license_expiry' => 'date',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
 
     public function currentVehicle()
     {
