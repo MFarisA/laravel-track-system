@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // Public routes (no auth required)
-Route::post('/login', [AuthApiController::class, 'loginApi']);
+Route::post('/loginApi', [AuthApiController::class, 'loginApi']);
 
 // Protected routes (requires Sanctum token)
 Route::middleware('auth:sanctum')->group(function () {
