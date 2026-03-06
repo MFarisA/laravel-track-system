@@ -3,6 +3,17 @@ import type { SidebarProps } from '@/components/ui/sidebar';
 import { computed } from 'vue';
 import { usePage, Link, router } from '@inertiajs/vue3';
 import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
+import {
     LayoutDashboard,
     Users,
     Truck,
@@ -102,12 +113,26 @@ const data = {
         <SidebarFooter>
             <SidebarMenu>
                 <SidebarMenuItem>
-                    <SidebarMenuButton as-child>
-                        <button @click="handleLogout" class="w-full">
-                            <LogOut />
-                            <span>{{ user?.name || 'Logout' }}</span>
-                        </button>
-                    </SidebarMenuButton>
+                    <AlertDialog>
+                        <AlertDialogTrigger as-child>
+                            <SidebarMenuButton class="w-full">
+                                <LogOut />
+                                <span>{{ user?.name || 'Logout' }}</span>
+                            </SidebarMenuButton>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle>Logout</AlertDialogTitle>
+                                <AlertDialogDescription>
+                                    Are you sure you want to logout from the admin dashboard?
+                                </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                <AlertDialogAction @click="handleLogout">Logout</AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+                    </AlertDialog>
                 </SidebarMenuItem>
             </SidebarMenu>
         </SidebarFooter>
