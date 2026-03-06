@@ -73,7 +73,7 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['email' => 'you dont have access to admin dashboard'])->withInput();
         }
         $request->session()->regenerate();
-        return redirect()->intended('/dashboard');
+        return redirect()->route('dashboard');
     }
 
     public function logout(Request $request)

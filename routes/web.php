@@ -1,11 +1,16 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// Home route - redirect to dashboard if authenticated, otherwise to login
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
+    return redirect()->route('login');
 })->name('home');
 
 // Guest routes (unauthenticated only)
@@ -19,5 +24,6 @@ Route::middleware('guest')->group(function () {
 
 // Auth routes (authenticated only)
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', fn () => Inertia::render('Dashboard'))->name('dashboard');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
