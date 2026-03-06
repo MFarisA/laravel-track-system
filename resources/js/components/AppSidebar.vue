@@ -47,7 +47,7 @@ const data = {
                 { title: 'Drivers', url: '/drivers', icon: Users },
                 { title: 'Vehicles', url: '/vehicles', icon: Truck },
                 { title: 'Trips', url: '/trips', icon: Route },
-                { title: 'Live Map', url: '/live-map', icon: MapPin },
+                { title: 'Live Map', url: '/live-maps', icon: MapPin },
             ],
         },
         {

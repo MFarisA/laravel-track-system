@@ -15,15 +15,19 @@ Route::get('/', function () {
 
 // Guest routes (unauthenticated only)
 Route::middleware('guest')->group(function () {
-    Route::get('/login', fn () => Inertia::render('auth/Login'))->name('login');
+    Route::get('/login', fn() => Inertia::render('auth/Login'))->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.store');
 
-    Route::get('/register', fn () => Inertia::render('auth/Register'))->name('register');
+    Route::get('/register', fn() => Inertia::render('auth/Register'))->name('register');
     Route::post('/register', [AuthController::class, 'register'])->name('register.store');
 });
 
 // Auth routes (authenticated only)
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', fn () => Inertia::render('Dashboard'))->name('dashboard');
+    Route::get('/dashboard', fn() => Inertia::render('Dashboard'))->name('dashboard');
+    Route::get('/drivers', fn() => Inertia::render('Driver'))->name('drivers');
+    Route::get('/live-maps', fn() => Inertia::render('LiveMaps'))->name('live-maps');
+    Route::get('/trips', fn() => Inertia::render('Trips'))->name('trips');
+    Route::get('/vechiles', fn() => Inertia::render('Vechiles'))->name('vechiles');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
