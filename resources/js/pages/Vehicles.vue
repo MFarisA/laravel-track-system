@@ -6,10 +6,10 @@ defineOptions({ layout: DashboardLayout });
 </script>
 
 <template>
-    <Head title="Trips" />
+    <Head title="Vehicles" />
 
     <div class="space-y-4">
-        <h1 class="text-2xl font-bold">Trips</h1>
-        <p class="text-muted-foreground">Halaman Trips — konten akan ditambahkan nanti.</p>
+        <h1 class="text-2xl font-bold">Vehicles</h1>
+        <p class="text-muted-foreground">Halaman Vehicles — konten akan ditambahkan nanti.</p>
     </div>
 </template>

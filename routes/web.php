@@ -28,6 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/drivers', fn() => Inertia::render('Driver'))->name('drivers');
     Route::get('/live-maps', fn() => Inertia::render('LiveMaps'))->name('live-maps');
     Route::get('/trips', fn() => Inertia::render('Trips'))->name('trips');
-    Route::get('/vechiles', fn() => Inertia::render('Vechiles'))->name('vechiles');
+    Route::get('/vehicles', fn() => Inertia::render('Vehicles'))->name('vehicles');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
